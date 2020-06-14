@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/memoListFragment">
+
+    <fragment
+        android:id="@+id/memoListFragment"
+        android:name="io.github.towor.mvvmjetpacktraining.memoList.MemoListFragment"
+        android:label="MemoList">
+
+        <action
+            android:id="@+id/action_memoList_to_memoAdd"
+            app:destination="@+id/memoAddFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/memoAddFragment"
+        android:name="io.github.towor.mvvmjetpacktraining.memoAdd.MemoAddFragment"
+        android:label="MemoAdd">
+
+        <action
+            android:id="@+id/action_memoAdd_to_memoList"
+            app:destination="@+id/memoListFragment"
+            app:popUpTo="@id/memoListFragment"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+</navigation>
